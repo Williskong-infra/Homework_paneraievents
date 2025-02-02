@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { Pool } = require('pg');
+const { Pool, Events } = require('pg');
 const dotenv = require('dotenv');
 
 dotenv.config();
@@ -23,8 +23,18 @@ app.use(cors());
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('This is Backend');
+  res.send('Hello World');
 });
+
+app.get('/check_booked', (req, res) => {
+  res.send('Hello World');
+});
+
+app.get('/timeslot_and_vacancy', async (req, res) => {
+  const all_events = await Events.findAll()
+  res.json(all_sessions) 
+});
+
 
 app.get('/test-db', async (req, res) => {
   try {
