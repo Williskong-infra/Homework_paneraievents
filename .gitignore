@@ -24,6 +24,8 @@ pids
 *.seed
 *.pid.lock
 package-lock.json
+Backend/package-lock.json
+
 
 # Backup files
 *.bak
