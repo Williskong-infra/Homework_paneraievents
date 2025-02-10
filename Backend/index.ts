@@ -1,7 +1,11 @@
 import express from 'express'
 import { Users, Events } from './models'
+
+
 const app = express()
 const port = 5000
+
+
 app.use(express.json());
 
 app.get('/', (req, res) => {
